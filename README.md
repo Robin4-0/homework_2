@@ -1,4 +1,4 @@
-# Homework2 - Manipulation
+# Homework 2 - Manipulation
 
 Suppose a human user has requested a set of x objects in order to accomplish an assembly task. These x objects have been detected – pose and category [shape and color] –  on a table, among other (n-x) objects. 
 
