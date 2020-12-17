@@ -25,18 +25,6 @@ As depicted in the robin_arena Readme.md, the following commands let actuate the
 
 ### Robotiq 3-Finger Adaptive Gripper
 
-- Activation:
-
-```sh
-$ rostopic pub --once /left_hand/command robotiq_3f_gripper_articulated_msgs/Robotiq3FGripperRobotOutput "{rACT: 1, rMOD: 0, rGTO: 0, rATR: 0, rGLV: 0, rICF: 0, rICS: 0, rPRA: 0, rSPA: 0, rFRA: 0, rPRB: 0, rSPB: 0, rFRB: 0, rPRC: 0, rSPC: 0, rFRC: 0, rPRS: 0, rSPS: 0, rFRS: 0}"
-```
-
-- Deactivation:
-
-```sh
-$ rostopic pub --once /left_hand/command robotiq_3f_gripper_articulated_msgs/Robotiq3FGripperRobotOutput "{rACT: 0, rMOD: 0, rGTO: 0, rATR: 0, rGLV: 0, rICF: 0, rICS: 0, rPRA: 0, rSPA: 0, rFRA: 0, rPRB: 0, rSPB: 0, rFRB: 0, rPRC: 0, rSPC: 0, rFRC: 0, rPRS: 0, rSPS: 0, rFRS: 0}"
-```
-
 - Close:
 
 ```sh
@@ -60,7 +48,7 @@ model_name_2: 'OBJECT_NAME'
 link_name_2: 'OBJECT_LINK_NAME'"
 ```
 
-where *ROBOT_NAME*, *ROBOT_LINK_NAME*, *OBJECT_NAME*, and *OBJECT_LINK_NAME* are the GAZEBO names of robot and object that has to be attached - and their links. E.g., if the user wants to attach the UR5 robot and the third simulated cube: *ROBOT_NAME = robin_ur5*, *ROBOT_LINK_NAME = wrist_3_link*, *OBJECT_NAME = cube3*, and *OBJECT_LINK_NAME = cube3_link*. 
+where *ROBOT_NAME*, *ROBOT_LINK_NAME*, *OBJECT_NAME*, and *OBJECT_LINK_NAME* are the GAZEBO names of robot and object that has to be attached - and their links. 
 
 - Detach object:
 
@@ -72,3 +60,15 @@ link_name_2: 'OBJECT_LINK_NAME'"
 ```
 where names are defined as before.
 
+In the case in analysis, *ROBOT_NAME = robin_ur5* and *ROBOT_LINK_NAME = wrist_3_link*. A table follows depicting *OBJECT_NAME* and *OBJECT_LINK_NAME*, associated with the Apriltag id.
+
+| Apriltag id | frame_id   | object_name  | object_link_name |
+| ------------|:----------:|:------------:|:----------------:| 
+|       0     | red_cube_0 |  cube1       | cube1_link       |
+|       1     | red_cube_1 |  cube2       | cube2_link       |
+|       2     | red_cube_2 |  cube3       | cube3_link       |
+|       3     | red_cube_3 |  cube4       | cube4_link       |
+|             |            |  blue_cube_1 | blue_cube_1_link |
+|             |            |  blue_cube_2 | blue_cube_2_link |
+|             |            |  blue_cube_3 | blue_cube_3_link |
+|             |            |  blue_cube_4 | blue_cube_4_link |
