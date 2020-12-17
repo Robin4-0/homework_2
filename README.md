@@ -9,7 +9,7 @@ Suggested manipulation routine:
 2.	From the detection info, define a collision object for every object on the table;
 3. Check the information from command line to identify the object to be picked (target object at a certain target pose);
 4.	Make the robot approach the target pose by moving on an intermediate target pose (pose 1) that is Z cm above the target one (remember to align the end effector with the center of the object in the direction of the object itself) (e.g., you can assign a MoveIt! pose goal);
-5. Open the gripper
+5. Open the gripper;
 6.	Make the robot move (Z-z) cm above the marker (pose 2) through a linear movement (e.g., plan a MoveIt! cartesian path). This pose must guarantee the correct grasp of the object;
 5.	Remove the target object from the collision objects;
 6. Attach the object to the eef through the Gazebo plugin;
@@ -39,7 +39,7 @@ $ rostopic pub --once /left_hand/command robotiq_3f_gripper_articulated_msgs/Rob
 $ rostopic pub --once /left_hand/command robotiq_3f_gripper_articulated_msgs/Robotiq3FGripperRobotOutput "{rACT: 1, rMOD: 0, rGTO: 1, rATR: 0, rGLV: 0, rICF: 0, rICS: 0, rPRA: 0, rSPA: 200, rFRA: 0, rPRB: 0, rSPB: 0, rFRB: 0, rPRC: 0, rSPC: 0, rFRC: 0, rPRS: 0, rSPS: 0, rFRS: 0}"
 ```
 
-### Attach/detach objects [in simulation]
+### Attach/detach objects thorugh the Gazebo plugin
 
 - Attach object:
 
